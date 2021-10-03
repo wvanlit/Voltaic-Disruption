@@ -1,8 +1,89 @@
-[gd_scene format=2]
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://ui/fonts/Title.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/effects/MatrixEffect.gd" type="Script" id=2]
+[ext_resource path="res://ui/effects/PulseEffect.gd" type="Script" id=3]
+[ext_resource path="res://ui/MainMenuOption.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/scripts/MainMenu.gd" type="Script" id=5]
+[ext_resource path="res://terrain/level_tileset.tres" type="TileSet" id=6]
+
+[sub_resource type="RichTextEffect" id=1]
+script = ExtResource( 2 )
+
+[sub_resource type="RichTextEffect" id=2]
+script = ExtResource( 3 )
 
 [node name="Main Menu" type="Control"]
+anchor_top = -0.0013109
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.998689
+margin_left = -0.353561
+margin_top = -0.650864
+margin_right = -0.353577
+margin_bottom = -0.650864
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Background 2" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65539, 24, 0, 65540, 24, 0, 65541, 24, 0, 65545, 16, 0, 65548, 24, 0, 65553, 16, 131072, 65554, 16, 131072, 131075, 24, 65536, 131076, 24, 0, 131077, 24, 0, 131081, 16, 0, 131084, 24, 0, 131089, 16, 131072, 131090, 16, 65536, 196609, 2, 0, 196612, 24, 0, 196613, 24, 65536, 196617, 16, 0, 196620, 24, 0, 196624, 9, 327682, 196625, 16, 65536, 262145, 2, 65538, 262146, 24, 393216, 262148, 24, 131072, 262153, 16, 0, 262156, 24, 65536, 262158, 24, 65537, 262159, 24, 65537, 262160, 24, 65537, 327689, 16, 65536, 327694, 24, 196608, 327695, 24, 196609, 327696, 24, 196610, 327698, 2, 1, 393231, 24, 327681, 393234, 2, 65539, 458756, 25, 1, 458757, 25, 2, 458767, 24, 327681, 524292, 25, 65537, 524293, 25, 65538, 524298, 25, 524289, 524299, 25, 524290, 524300, 25, 524291, 524303, 24, 327681, 589828, 25, 131073, 589829, 25, 131074, 589834, 25, 589825, 589835, 25, 589826, 589836, 25, 589827, 589839, 24, 327681, 655364, 25, 196609, 655365, 25, 196610, 655367, 24, 458753, 655368, 24, 458754, 655370, 25, 655361, 655371, 25, 655362, 655372, 25, 655363, 655375, 24, 3, 655376, 24, 524290, 655377, 24, 589827 )
+
+[node name="Background 1" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 0, 1, 65539, 1, 1, 65537, 2, 1, 65537, 3, 1, 65537, 4, 1, 65537, 5, 1, 65537, 6, 1, 65537, 7, 1, 65537, 8, 1, 65537, 9, 1, 65537, 10, 1, 65537, 11, 1, 65537, 12, 1, 65537, 13, 1, 65537, 14, 1, 65537, 15, 1, 65537, 16, 1, 65537, 17, 1, 65537, 18, 1, 65537, 19, 1, 65537, 65536, 1, 65539, 65542, 9, 65538, 65547, 9, 65538, 65552, 9, 65538, 65555, 1, 65536, 131072, 1, 65539, 131078, 9, 0, 131083, 9, 0, 131088, 9, 0, 131091, 1, 65536, 196608, 1, 65539, 196614, 9, 0, 196619, 9, 0, 196624, 9, 0, 196627, 1, 65536, 262144, 1, 65539, 262148, 9, 65536, 262149, 9, 1, 262150, 9, 65539, 262151, 9, 3, 262152, 9, 1, 262153, 9, 1, 262154, 9, 1, 262155, 9, 131075, 262160, 9, 0, 262163, 1, 65536, 327680, 1, 65539, 327681, 9, 1, 327682, 9, 1, 327683, 9, 1, 327684, 9, 131073, 327687, 9, 0, 327691, 9, 0, 327696, 9, 0, 327699, 1, 65536, 393216, 1, 65539, 393217, 18, 0, 393218, 18, 1, 393223, 9, 0, 393225, 18, 2, 393226, 18, 3, 393227, 9, 0, 393232, 9, 0, 393235, 1, 65536, 458752, 1, 65539, 458753, 18, 65536, 458754, 18, 65537, 458759, 9, 0, 458761, 18, 65538, 458762, 18, 65539, 458763, 9, 131072, 458764, 9, 1, 458765, 9, 65537, 458768, 9, 196611, 458769, 9, 1, 458770, 9, 196610, 458771, 1, 65536, 524288, 1, 65539, 524295, 9, 0, 524301, 9, 196611, 524302, 9, 1, 524303, 9, 1, 524304, 9, 131073, 524307, 1, 65536, 589824, 1, 65539, 589827, 9, 65536, 589828, 9, 1, 589829, 9, 1, 589830, 9, 1, 589831, 9, 131073, 589837, 9, 0, 589843, 1, 65536, 655360, 1, 65539, 655363, 9, 262147, 655373, 9, 262147, 655379, 1, 65536, 720896, 1, 65539, 720897, 1, 65537, 720898, 1, 65537, 720899, 1, 65537, 720900, 1, 65537, 720901, 1, 65537, 720902, 1, 65537, 720903, 1, 65537, 720904, 1, 65537, 720905, 1, 65537, 720906, 1, 65537, 720907, 1, 65537, 720908, 1, 65537, 720909, 1, 65537, 720910, 1, 65537, 720911, 1, 65537, 720912, 1, 65537, 720913, 1, 65537, 720914, 1, 65537, 720915, 1, 65536 )
+
+[node name="Title" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -128.0
+margin_top = 30.0
+margin_right = 130.0
+margin_bottom = 72.0
+grow_vertical = 2
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 0.627451, 0.913725, 0.941176, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][wave][pulse color=#e6f12d height=0.0 freq=1.5][matrix clean=2.0 dirty=0.1 span=2]Voltaic
+Disruption"
+text = "Voltaic
+Disruption"
+custom_effects = [ SubResource( 1 ), SubResource( 2 ) ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_right = 50.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" parent="Menu" instance=ExtResource( 4 )]
+text = "Start"
+
+[node name="Options" parent="Menu" instance=ExtResource( 4 )]
+margin_top = 22.0
+margin_bottom = 40.0
+text = "Options"
+
+[node name="Exit" parent="Menu" instance=ExtResource( 4 )]
+margin_top = 44.0
+margin_bottom = 62.0
+text = "Exit"
+
+[connection signal="pressed" from="Menu/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Menu/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="Menu/Exit" to="." method="_on_Exit_pressed"]
