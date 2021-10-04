@@ -21,7 +21,7 @@ tracks/0/keys = {
 "values": [ 24, 25, 26, 27 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Hit Effect:visible")
+tracks/1/path = NodePath("Hit Effect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -33,7 +33,7 @@ tracks/1/keys = {
 "values": [ false, true, false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../Hit Effect:frame")
+tracks/2/path = NodePath("Hit Effect:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -43,6 +43,23 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3 ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.375 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ true ],
+"method": "setInAnimation"
+}, {
+"args": [ false ],
+"method": "setInAnimation"
+} ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -68,10 +85,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ false, false ]
 }
 
 [sub_resource type="Animation" id=26]
@@ -119,7 +136,7 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 hframes = 8
 vframes = 4
-frame = 26
+frame = 27
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 method_call_mode = 1
@@ -128,13 +145,11 @@ anims/idle = SubResource( 4 )
 anims/jump = SubResource( 26 )
 anims/run = SubResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 1.06186 )
-shape = SubResource( 1 )
-
-[node name="Hit Effect" type="Sprite" parent="."]
-visible = false
+[node name="Hit Effect" type="Sprite" parent="Sprite"]
 position = Vector2( 17.6976, -0.336082 )
 texture = ExtResource( 3 )
 hframes = 4
-frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1.06186 )
+shape = SubResource( 1 )
