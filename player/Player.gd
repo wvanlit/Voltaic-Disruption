@@ -14,6 +14,7 @@ export var inAnimation: bool = false setget setInAnimation
 
 onready var sprite = $Sprite
 onready var animationPlayer = $Sprite/AnimationPlayer
+onready var attackBox = $Sprite/AttackBox/CollisionShape2D
 
 
 func _physics_process(delta):
@@ -64,3 +65,7 @@ func process_actions():
 
 func setInAnimation(state: bool):
 	inAnimation = state
+
+
+func setAttackBoxEnabled(state: bool):
+	attackBox.disabled = !state
