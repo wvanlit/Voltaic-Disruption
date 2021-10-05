@@ -9,9 +9,11 @@ var shouldReset: bool = false
 func _ready() -> void:
 	startingPosition = position
 
-func _physics_process(delta: float) -> void:
+
+func _physics_process(_delta: float) -> void:
 	if shouldReset:
 		resetPosition()
+
 
 func _on_area_entered(area: Area2D) -> void:
 	var x_pos = self.global_position.x - area.global_position.x
