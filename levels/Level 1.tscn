@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://terrain/level_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://ui/fonts/InGameText.tres" type="DynamicFont" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://terrain/Energy Ball.tscn" type="PackedScene" id=5]
 [ext_resource path="res://terrain/Energy Node.tscn" type="PackedScene" id=6]
 [ext_resource path="res://terrain/LockedDoor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://terrain/Exit.tscn" type="PackedScene" id=8]
 
-[node name="Level" type="Node2D"]
+[node name="Level 1" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="Background" type="TileMap" parent="."]
@@ -79,9 +80,6 @@ position = Vector2( 292, 80 )
 doorMode = 1
 nodePaths = [ NodePath("../Node 1"), NodePath("../Node 2") ]
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 33.5, 50.75 )
-
 [node name="Ball 1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 200, 88 )
 
@@ -94,3 +92,10 @@ position = Vector2( 256, 88 )
 [node name="Node 2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 280, 56 )
 rotation = -1.5708
+
+[node name="Exit" parent="." instance=ExtResource( 8 )]
+position = Vector2( 328, 80 )
+nextScene = "res://Main Menu.tscn"
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 33.5, 50.75 )

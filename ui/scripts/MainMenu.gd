@@ -1,8 +1,10 @@
 extends Control
 
+onready var levelManager = $"/root/LevelManager"
+onready var sceneTransition = $"/root/SceneTransition"
 
 func _on_Start_pressed() -> void:
-	get_tree().change_scene("res://levels/Level 1.tscn")
+	sceneTransition.transition_to(levelManager.get_current_level())
 
 
 func _on_Options_pressed() -> void:

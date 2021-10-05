@@ -1,3 +1,4 @@
+class_name Player
 extends KinematicBody2D
 
 const TARGET_FPS = 60
@@ -48,8 +49,8 @@ func process_movement(delta):
 	else:
 		animationPlayer.play("jump")
 
-		if Input.is_action_just_released("jump") and motion.y < -JUMP_FORCE / 2:
-			motion.y = -JUMP_FORCE / 2
+		if Input.is_action_just_released("jump") and motion.y < -JUMP_FORCE / 2.0:
+			motion.y = -JUMP_FORCE / 2.0
 
 		if x_input == 0:
 			motion.x = lerp(motion.x, 0, AIR_RESISTANCE * delta)
