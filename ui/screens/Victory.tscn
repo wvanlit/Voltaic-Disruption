@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://ui/fonts/Title.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/MainMenuOption.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/screens/Victory.gd" type="Script" id=3]
+[ext_resource path="res://ui/effects/MatrixEffect.gd" type="Script" id=4]
+[ext_resource path="res://ui/effects/PulseEffect.gd" type="Script" id=5]
+[ext_resource path="res://terrain/level_tileset.tres" type="TileSet" id=6]
+[ext_resource path="res://terrain/Energy Ball.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ui/fonts/InGameText.tres" type="DynamicFont" id=8]
+
+[sub_resource type="RichTextEffect" id=1]
+script = ExtResource( 4 )
+
+[sub_resource type="RichTextEffect" id=2]
+script = ExtResource( 5 )
+
+[node name="Victory Screen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -20, 40 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 0, 1, 65538, 1, 1, 65538, 2, 1, 65538, 3, 1, 65538, 4, 1, 65538, 5, 1, 65538, 6, 1, 65538, 7, 1, 65538, 8, 1, 65538, 9, 1, 65538, 10, 1, 65538, 11, 1, 65538, 12, 1, 65538, 13, 1, 65538, 14, 1, 65538, 15, 1, 65538, 16, 1, 65538, 17, 1, 65538, 18, 1, 65538, 19, 1, 65538, 65536, 1, 65538, 65538, 16, 0, 65548, 9, 262144, 65553, 24, 196609, 65555, 1, 65538, 131072, 1, 65538, 131074, 16, 0, 131084, 9, 0, 131089, 24, 196609, 131091, 1, 65538, 196608, 1, 65538, 196610, 16, 65536, 196611, 9, 65536, 196612, 9, 1, 196613, 9, 1, 196614, 9, 262146, 196615, 9, 1, 196616, 9, 3, 196617, 9, 1, 196618, 9, 1, 196619, 9, 1, 196620, 9, 65539, 196621, 9, 1, 196622, 9, 65537, 196625, 24, 3, 196627, 1, 65538, 262144, 1, 65538, 262147, 9, 196608, 262149, 13, 1, 262150, 13, 2, 262152, 9, 131074, 262155, 18, 0, 262156, 18, 1, 262158, 9, 196611, 262159, 9, 196610, 262160, 1, 0, 262161, 1, 2, 262162, 1, 2, 262163, 1, 65538, 327680, 1, 65538, 327683, 9, 262147, 327685, 13, 0, 327688, 9, 131074, 327691, 18, 65536, 327692, 18, 65537, 327694, 9, 131074, 327696, 2, 3, 327697, 1, 65538, 327698, 1, 65538, 327699, 1, 65538, 393216, 1, 65538, 393217, 1, 2, 393218, 1, 2, 393219, 1, 2, 393220, 1, 3, 393221, 13, 65537, 393222, 13, 65538, 393224, 9, 131074, 393230, 9, 262144, 393233, 2, 3, 393234, 1, 65538, 393235, 1, 65538, 458752, 1, 65538, 458753, 1, 65538, 458754, 1, 65538, 458755, 1, 65538, 458756, 1, 65538, 458757, 9, 1, 458758, 9, 262145, 458759, 9, 1, 458760, 9, 131073, 458763, 25, 524289, 458764, 25, 524290, 458765, 25, 524291, 458766, 9, 131074, 458770, 2, 3, 458771, 1, 65538, 524288, 1, 65538, 524289, 1, 65538, 524290, 1, 65538, 524291, 1, 65538, 524292, 1, 65538, 524299, 25, 589825, 524300, 25, 589826, 524301, 25, 589827, 524302, 9, 131072, 524303, 9, 65537, 524306, 2, 65539, 524307, 1, 65538, 589824, 1, 65538, 589825, 1, 65538, 589826, 1, 65538, 589827, 1, 65538, 589828, 1, 65538, 589833, 24, 589826, 589834, 24, 589827, 589835, 25, 655361, 589836, 25, 655362, 589837, 25, 655363, 589839, 9, 0, 589843, 1, 65538, 655360, 1, 65538, 655361, 1, 65538, 655362, 1, 65538, 655363, 1, 65538, 655364, 1, 65538, 655365, 1, 1, 655366, 1, 1, 655367, 1, 1, 655368, 1, 1, 655369, 1, 1, 655370, 1, 1, 655371, 1, 1, 655372, 1, 1, 655373, 1, 1, 655374, 1, 1, 655375, 1, 1, 655376, 1, 1, 655377, 1, 1, 655378, 1, 1, 655379, 1, 65538, 720896, 1, 65538, 720897, 1, 65538, 720898, 1, 65538, 720899, 1, 65538, 720900, 1, 65538, 720901, 1, 65538, 720902, 1, 65538, 720903, 1, 65538, 720904, 1, 65538, 720905, 1, 65538, 720906, 1, 65538, 720907, 1, 65538, 720908, 1, 65538, 720909, 1, 65538, 720910, 1, 65538, 720911, 1, 65538, 720912, 1, 65538, 720913, 1, 65538, 720914, 1, 65538, 720915, 1, 65538 )
+
+[node name="Energy Ball" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 71.6134, 72.7629 )
+
+[node name="Energy Ball2" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 260.026, 36.0543 )
+
+[node name="Energy Ball3" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 269.39, 121.458 )
+
+[node name="Title" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -89.044
+margin_top = 29.6254
+margin_right = 88.956
+margin_bottom = 71.6254
+grow_vertical = 2
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 0.627451, 0.913725, 0.941176, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][wave][pulse color=#e6f12d height=0.0 freq=1.5][matrix clean=2.0 dirty=0.1 span=2]VIctory!"
+text = "VIctory!"
+custom_effects = [ SubResource( 1 ), SubResource( 2 ) ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -79.706
+margin_top = 64.6345
+margin_right = 82.294
+margin_bottom = 82.6345
+text = "Back To Main Menu"
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0.709804 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -71.9932
+margin_top = 74.8898
+margin_right = 81.0068
+margin_bottom = 115.89
+custom_fonts/font = ExtResource( 8 )
+text = "Thank you for playing
+Voltaic Disruption"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
