@@ -53,7 +53,7 @@ margin_right = 285.0
 margin_bottom = 128.0
 custom_fonts/font = ExtResource( 2 )
 text = "Power all nodes to 
-open the doors"
+open the door"
 align = 1
 valign = 1
 __meta__ = {
@@ -74,16 +74,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Energy Ball" parent="." instance=ExtResource( 5 )]
-position = Vector2( 204, 88 )
-gravity_scale = 0.0
-
-[node name="Energy Node" parent="." instance=ExtResource( 6 )]
-position = Vector2( 260, 88 )
-
 [node name="Door" parent="." instance=ExtResource( 7 )]
 position = Vector2( 292, 80 )
-node_paths = [ NodePath("../Energy Node") ]
+doorMode = 1
+nodePaths = [ NodePath("../Node 1"), NodePath("../Node 2") ]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 33.5, 50.75 )
+
+[node name="Ball 1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 200, 88 )
+
+[node name="Ball 2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 60, 56 )
+
+[node name="Node 1" parent="." instance=ExtResource( 6 )]
+position = Vector2( 256, 88 )
+
+[node name="Node 2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 280, 56 )
+rotation = -1.5708
