@@ -14,5 +14,5 @@ func _on_body_entered(body: Node) -> void:
 	print("Hit")
 	if body is EnergyBall:
 		body.queue_free()
-		emit_signal("energy_filled")
+		emit_signal("energy_filled", self)
 		animationPlayer.play("fill")
