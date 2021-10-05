@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://terrain/level_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://ui/fonts/InGameText.tres" type="DynamicFont" id=2]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://levels/Level.gd" type="Script" id=4]
 [ext_resource path="res://terrain/Energy Ball.tscn" type="PackedScene" id=5]
+[ext_resource path="res://terrain/Energy Node.tscn" type="PackedScene" id=6]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 4 )
@@ -73,8 +74,11 @@ __meta__ = {
 }
 
 [node name="Energy Ball2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 56.6534, 55.1436 )
+position = Vector2( 199.416, 88.7815 )
 gravity_scale = 0.0
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 33.5, 50.75 )
+
+[node name="Energy Node" parent="." instance=ExtResource( 6 )]
+position = Vector2( 277.678, 88.2649 )
