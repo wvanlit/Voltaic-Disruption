@@ -10,10 +10,13 @@ onready var animationPlayer = $AnimationPlayer
 var energyNodes = []
 var inputs = []
 
-var is_open = false
+export var is_open = false
 
 
 func _ready() -> void:
+	if is_open:
+		animationPlayer.play("open")
+	
 	for i in range(nodePaths.size()):
 		var path = nodePaths[i]
 		var node = get_node(path)

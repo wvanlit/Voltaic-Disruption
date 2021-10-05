@@ -19,6 +19,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://terrain/Energy Node.gd"
 }, {
+"base": "Node",
+"class": "LevelManagerNode",
+"language": "GDScript",
+"path": "res://levels/LevelManager.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://player/Player.gd"
+}, {
 "base": "RichTextEffect",
 "class": "RichTextMatrix",
 "language": "GDScript",
@@ -32,6 +42,8 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "EnergyBall": "",
 "EnergyNode": "",
+"LevelManagerNode": "",
+"Player": "",
 "RichTextMatrix": "",
 "RichTextPulse": ""
 }
@@ -41,6 +53,11 @@ _global_script_class_icons={
 config/name="Voltaic Disruption"
 run/main_scene="res://Main Menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SceneTransition="*res://ui/screens/SceneTransition.tscn"
+LevelManager="*res://levels/LevelManager.tscn"
 
 [display]
 
