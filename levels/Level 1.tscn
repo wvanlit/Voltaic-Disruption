@@ -72,8 +72,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Energy Ball" parent="." instance=ExtResource( 5 )]
-position = Vector2( 208.775, 87.9119 )
+[node name="Energy Ball2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 56.6534, 55.1436 )
+gravity_scale = 0.0
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 33.5, 50.75 )
