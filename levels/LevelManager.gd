@@ -6,6 +6,10 @@ export(PackedScene) var victory
 
 var currentLevelIndex = 0
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("restart"):
+		reset_level()
+
 func get_current_level() -> PackedScene:
 	return levels[currentLevelIndex] 
 
@@ -15,3 +19,7 @@ func get_next_level() -> PackedScene:
 		return levels[currentLevelIndex] 
 	else:
 		return victory
+
+func reset_level():
+	# TODO - Add some animation
+	get_tree().reload_current_scene()
