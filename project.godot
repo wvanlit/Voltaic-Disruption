@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "RigidBody2D",
 "class": "EnergyBall",
 "language": "GDScript",
-"path": "res://terrain/EnergyBall.gd"
+"path": "res://terrain/Objects/EnergyBall.gd"
 }, {
 "base": "RigidBody2D",
 "class": "EnergyNode",
 "language": "GDScript",
-"path": "res://terrain/Energy Node.gd"
+"path": "res://terrain/Objects/Energy Node.gd"
 }, {
 "base": "Node",
 "class": "LevelManagerNode",
@@ -42,7 +42,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Spikes",
 "language": "GDScript",
-"path": "res://terrain/Spikes.gd"
+"path": "res://terrain/Objects/Spikes.gd"
 } ]
 _global_script_class_icons={
 "EnergyBall": "",
@@ -143,6 +143,13 @@ restart={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":10,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Energy Ball"
+2d_physics/layer_3="Interactables"
+2d_physics/layer_4="Solid"
 
 [physics]
 

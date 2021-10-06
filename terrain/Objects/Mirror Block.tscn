@@ -1,0 +1,157 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://terrain/terrain.png" type="Texture" id=1]
+[ext_resource path="res://terrain/Objects/MirrorBlock.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "glow"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 251, 250 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 250 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "turnEast"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ 270.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "turnNorth"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ 180.0, 270.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "turnSouth"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, -2 ),
+"update": 0,
+"values": [ 0.0, 90.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "turnWest"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ 90.0, 180.0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8.04952, 8 )
+
+[node name="Mirror Block" type="RigidBody2D" groups=[
+"MirrorBlock",
+]]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 6.28319
+texture = ExtResource( 1 )
+hframes = 29
+vframes = 16
+frame = 250
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/glow = SubResource( 8 )
+anims/idle = SubResource( 2 )
+anims/turnEast = SubResource( 7 )
+anims/turnNorth = SubResource( 6 )
+anims/turnSouth = SubResource( 5 )
+anims/turnWest = SubResource( 4 )
+
+[node name="Center" type="Position2D" parent="."]
+
+[node name="Energy Ball Hitbox" type="Area2D" parent="."]
+monitorable = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Energy Ball Hitbox"]
+shape = SubResource( 3 )
+
+[node name="Player Hitbox" type="Area2D" parent="."]
+monitorable = false
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Hitbox"]
+shape = SubResource( 3 )
+
+[connection signal="area_entered" from="Energy Ball Hitbox" to="." method="_on_area_entered"]
+[connection signal="area_entered" from="Player Hitbox" to="." method="_on_area_entered"]

@@ -3,9 +3,9 @@
 [ext_resource path="res://terrain/level_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://ui/fonts/InGameText.tres" type="DynamicFont" id=2]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://terrain/Energy Ball.tscn" type="PackedScene" id=5]
-[ext_resource path="res://terrain/Energy Node.tscn" type="PackedScene" id=6]
-[ext_resource path="res://terrain/LockedDoor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://terrain/Objects/Energy Ball.tscn" type="PackedScene" id=5]
+[ext_resource path="res://terrain/Objects/Energy Node.tscn" type="PackedScene" id=6]
+[ext_resource path="res://terrain/Objects/LockedDoor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://terrain/Exit.tscn" type="PackedScene" id=8]
 
 [node name="Level" type="Node2D"]
@@ -68,7 +68,7 @@ nodePaths = [ NodePath("../Node 1"), NodePath("../Node 2") ]
 position = Vector2( 140, 88 )
 
 [node name="Ball 2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 60, 60 )
+position = Vector2( 60, 56 )
 
 [node name="Node 1" parent="." instance=ExtResource( 6 )]
 position = Vector2( 204, 88 )
