@@ -2,6 +2,10 @@ extends Control
 
 onready var levelManager = $"/root/LevelManager"
 onready var sceneTransition = $"/root/SceneTransition"
+onready var globalEnv = $"/root/GlobalWorldEnvironment"
+
+func _ready() -> void:
+	globalEnv.set_mode(globalEnv.EnvMode.MENU)
 
 func _on_Start_pressed() -> void:
 	sceneTransition.transition_to(levelManager.get_current_level())

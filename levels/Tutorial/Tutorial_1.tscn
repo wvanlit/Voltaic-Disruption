@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://terrain/level_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://ui/fonts/InGameText.tres" type="DynamicFont" id=2]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://effects/line_light.png" type="Texture" id=4]
 [ext_resource path="res://terrain/LockedDoor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://terrain/Exit.tscn" type="PackedScene" id=8]
 
@@ -84,3 +85,15 @@ position = Vector2( 26.2249, 149.979 )
 [node name="Door" parent="." instance=ExtResource( 7 )]
 position = Vector2( 308, 80 )
 is_open = true
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="LineLight" type="Light2D" parent="Lights"]
+position = Vector2( 82.3138, 91.6487 )
+texture = ExtResource( 4 )
+texture_scale = 1.5
+
+[node name="LineLight2" type="Light2D" parent="Lights"]
+position = Vector2( 238.744, 82.5738 )
+texture = ExtResource( 4 )
+texture_scale = 1.5

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://player/player.png" type="Texture" id=2]
 [ext_resource path="res://effects/hit_effect.png" type="Texture" id=3]
+[ext_resource path="res://effects/small_light.png" type="Texture" id=4]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=7]
 resource_name = "hit"
 length = 0.4
 step = 0.025
@@ -160,7 +161,7 @@ frame = 27
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 method_call_mode = 1
-anims/hit = SubResource( 1 )
+anims/hit = SubResource( 7 )
 anims/idle = SubResource( 2 )
 anims/jump = SubResource( 3 )
 anims/run = SubResource( 4 )
@@ -186,3 +187,7 @@ frame = 3
 [node name="Collision Box" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1.36661 )
 shape = SubResource( 6 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 4 )
+texture_scale = 0.4

@@ -8,7 +8,7 @@
 [ext_resource path="res://terrain/LockedDoor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://terrain/Exit.tscn" type="PackedScene" id=8]
 
-[node name="Level 1" type="Node2D"]
+[node name="Level" type="Node2D"]
 
 [node name="Background" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -65,10 +65,10 @@ doorMode = 1
 nodePaths = [ NodePath("../Node 1"), NodePath("../Node 2") ]
 
 [node name="Ball 1" parent="." instance=ExtResource( 5 )]
-position = Vector2( 120, 88 )
+position = Vector2( 140, 88 )
 
 [node name="Ball 2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 60, 56 )
+position = Vector2( 60, 60 )
 
 [node name="Node 1" parent="." instance=ExtResource( 6 )]
 position = Vector2( 204, 88 )
