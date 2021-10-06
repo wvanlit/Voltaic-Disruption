@@ -38,6 +38,11 @@ _global_script_classes=[ {
 "class": "RichTextPulse",
 "language": "GDScript",
 "path": "res://ui/effects/PulseEffect.gd"
+}, {
+"base": "Area2D",
+"class": "Spikes",
+"language": "GDScript",
+"path": "res://terrain/Spikes.gd"
 } ]
 _global_script_class_icons={
 "EnergyBall": "",
@@ -45,7 +50,8 @@ _global_script_class_icons={
 "LevelManagerNode": "",
 "Player": "",
 "RichTextMatrix": "",
-"RichTextPulse": ""
+"RichTextPulse": "",
+"Spikes": ""
 }
 
 [application]
