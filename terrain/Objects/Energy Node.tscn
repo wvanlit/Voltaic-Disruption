@@ -70,12 +70,15 @@ gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 2
-frame = 6
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -87,5 +90,6 @@ anims/idle = SubResource( 3 )
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 3 )
 color = Color( 1, 0, 0, 1 )
+energy = 0.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

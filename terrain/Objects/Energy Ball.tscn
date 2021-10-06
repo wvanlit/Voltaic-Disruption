@@ -4,10 +4,10 @@
 [ext_resource path="res://terrain/Objects/EnergyBall.gd" type="Script" id=2]
 [ext_resource path="res://terrain/Objects/ball.png" type="Texture" id=3]
 
-[sub_resource type="CircleShape2D" id=5]
-radius = 3.36605
+[sub_resource type="CircleShape2D" id=1]
+radius = 1.25345
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=2]
 radius = 4.33341
 
 [sub_resource type="CanvasItemMaterial" id=3]
@@ -30,16 +30,18 @@ contact_monitor = true
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="." groups=[
 "EnergyBall",
 ]]
+visible = false
 collision_layer = 6
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 6 )
+visible = false
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.5, 0.5 )

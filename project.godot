@@ -70,6 +70,7 @@ GlobalWorldEnvironment="*res://effects/WorldEnvironment.tscn"
 
 window/size/width=320
 window/size/height=180
+window/size/fullscreen=true
 window/size/test_width=1280
 window/size/test_height=720
 window/stretch/mode="viewport"
@@ -151,6 +152,10 @@ restart={
 2d_physics/layer_3="Interactables"
 2d_physics/layer_4="Solid"
 
+[node]
+
+name_num_separator=2
+
 [physics]
 
 common/enable_pause_aware_picking=true
@@ -158,3 +163,7 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 environment/default_clear_color=Color( 0.113725, 0.129412, 0.176471, 1 )
+
+[world]
+
+2d/cell_size=16

@@ -30,9 +30,7 @@ func bounce_energy_ball(area: Area2D):
 	var ball = area.get_parent() as EnergyBall
 	var bounce : Vector2 = get_ball_bounce_direction_vector(ball)
 	
-	if bounce.length() < 1:
-		ball.should_reset()
-	else:
+	if bounce.length() >= 1:
 		animationPlayer.play("glow")
 		bounce_ball_with_velocity(ball, bounce)
 	

@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-enum Mode { ANY, ALL, HALF }
+enum Mode { ALL, ANY, HALF }
 
 export(Mode) var doorMode
 export var nodePaths: Array

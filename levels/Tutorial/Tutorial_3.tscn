@@ -31,10 +31,10 @@ tile_data = PoolIntArray( -1, 1, 65537, -65536, 1, 65537, -65535, 1, 65537, -655
 
 [node name="Tutorial Text #1" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0.498039 )
-margin_left = 20.0
-margin_top = 8.0
-margin_right = 112.0
-margin_bottom = 35.0
+margin_left = 100.0
+margin_top = 20.0
+margin_right = 192.0
+margin_bottom = 47.0
 custom_fonts/font = ExtResource( 2 )
 text = "Hit the energy ball  
 using Left click or F"
@@ -46,10 +46,10 @@ __meta__ = {
 
 [node name="Tutorial Text #2" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0.498039 )
-margin_left = 180.0
-margin_top = 8.0
-margin_right = 264.0
-margin_bottom = 35.0
+margin_left = 100.0
+margin_top = 52.0
+margin_right = 184.0
+margin_bottom = 79.0
 custom_fonts/font = ExtResource( 2 )
 text = "Power all nodes to 
 open the door"
@@ -61,21 +61,13 @@ __meta__ = {
 
 [node name="Door" parent="." instance=ExtResource( 7 )]
 position = Vector2( 292, 80 )
-doorMode = 1
-nodePaths = [ NodePath("../Node 1"), NodePath("../Node 2") ]
+nodePaths = [ NodePath("../Node 1") ]
 
 [node name="Ball 1" parent="." instance=ExtResource( 5 )]
-position = Vector2( 140, 88 )
-
-[node name="Ball 2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 60, 56 )
+position = Vector2( 120, 88 )
 
 [node name="Node 1" parent="." instance=ExtResource( 6 )]
 position = Vector2( 204, 88 )
-
-[node name="Node 2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 280, 56 )
-rotation = -1.5708
 
 [node name="Exit" parent="." instance=ExtResource( 8 )]
 position = Vector2( 328, 80 )
