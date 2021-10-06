@@ -1,7 +1,7 @@
 [gd_resource type="Environment" format=2]
 
 [resource]
-glow_enabled = true
+background_mode = 4
 glow_levels/1 = true
 glow_levels/2 = true
 glow_levels/4 = true
@@ -10,5 +10,4 @@ glow_intensity = 0.1
 glow_bloom = 0.05
 glow_blend_mode = 1
 glow_hdr_luminance_cap = 2.0
-adjustment_enabled = true
 adjustment_brightness = 0.9
