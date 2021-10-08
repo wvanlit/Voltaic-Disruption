@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Karl Casey - 04 Assault.ogg-4c0221e8a8ede98bb0bbe115fa04a4bf.oggstr"
+
+[deps]
+
+source_file="res://music/songs/Karl Casey - 04 Assault.ogg"
+dest_files=[ "res://.import/Karl Casey - 04 Assault.ogg-4c0221e8a8ede98bb0bbe115fa04a4bf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

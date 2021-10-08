@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Karl Casey - 05 Knee Deep in the Dead.ogg-2e880a3e1c11f6de83e549758cb860ae.oggstr"
+
+[deps]
+
+source_file="res://music/songs/Karl Casey - 05 Knee Deep in the Dead.ogg"
+dest_files=[ "res://.import/Karl Casey - 05 Knee Deep in the Dead.ogg-2e880a3e1c11f6de83e549758cb860ae.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

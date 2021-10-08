@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Karl Casey - 01 Rise of the Machines.ogg-79e366450614e0739db77d2debe5bee5.oggstr"
+
+[deps]
+
+source_file="res://music/songs/Karl Casey - 01 Rise of the Machines.ogg"
+dest_files=[ "res://.import/Karl Casey - 01 Rise of the Machines.ogg-79e366450614e0739db77d2debe5bee5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

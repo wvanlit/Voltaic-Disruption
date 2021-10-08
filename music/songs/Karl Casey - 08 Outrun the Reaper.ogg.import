@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Karl Casey - 08 Outrun the Reaper.ogg-6461753a61f98825d33eefac9bb88c8d.oggstr"
+
+[deps]
+
+source_file="res://music/songs/Karl Casey - 08 Outrun the Reaper.ogg"
+dest_files=[ "res://.import/Karl Casey - 08 Outrun the Reaper.ogg-6461753a61f98825d33eefac9bb88c8d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

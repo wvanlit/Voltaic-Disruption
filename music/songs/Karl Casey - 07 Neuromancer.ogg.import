@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Karl Casey - 07 Neuromancer.ogg-c6af5b0111cae074f79d8e078f7a457a.oggstr"
+
+[deps]
+
+source_file="res://music/songs/Karl Casey - 07 Neuromancer.ogg"
+dest_files=[ "res://.import/Karl Casey - 07 Neuromancer.ogg-c6af5b0111cae074f79d8e078f7a457a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
