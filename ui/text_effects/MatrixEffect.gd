@@ -7,6 +7,7 @@ class_name RichTextMatrix
 # Define the tag name.
 var bbcode = "matrix"
 
+
 func _process_custom_fx(char_fx):
 	# Get parameters, or use the provided default value if missing.
 	var clear_time = char_fx.env.get("clean", 2.0)
@@ -15,11 +16,11 @@ func _process_custom_fx(char_fx):
 
 	var value = char_fx.character
 
-	var matrix_time = fmod(char_fx.elapsed_time + (char_fx.absolute_index / float(text_span)), \
-						   clear_time + dirty_time)
+	var matrix_time = fmod(
+		char_fx.elapsed_time + (char_fx.absolute_index / float(text_span)), clear_time + dirty_time
+	)
 
-	matrix_time = 0.0 if matrix_time < clear_time else \
-				  (matrix_time - clear_time) / dirty_time
+	matrix_time = 0.0 if matrix_time < clear_time else (matrix_time - clear_time) / dirty_time
 
 	if value >= 65 && value < 126 && matrix_time > 0.0:
 		value -= 65
