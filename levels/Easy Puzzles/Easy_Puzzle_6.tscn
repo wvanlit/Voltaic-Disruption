@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://terrain/Objects/The Core.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/Easy Puzzles/EndCamera.gd" type="Script" id=2]
+[ext_resource path="res://terrain/Objects/Energy Node.tscn" type="PackedScene" id=3]
+[ext_resource path="res://terrain/Objects/Mirror Block.tscn" type="PackedScene" id=4]
+[ext_resource path="res://terrain/LevelTileMap.tscn" type="PackedScene" id=5]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://terrain/Objects/Energy Ball.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "end"
+length = 15.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.5, 0.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 7, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 14.5, 15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 160, 92 ), Vector2( 168, 88 ), Vector2( 152.059, 92 ), Vector2( 160, 100 ), Vector2( 160, 92 ), Vector2( 164, 100 ), Vector2( 156, 96 ), Vector2( 160, 100 ), Vector2( 164, 92 ), Vector2( 156, 96 ), Vector2( 164, 100 ), Vector2( 164, 92 ), Vector2( 156, 87.645 ), Vector2( 156, 100 ), Vector2( 164, 104 ), Vector2( 160, 96 ) ]
+}
+
+[node name="Level" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 5 )]
+tile_data = PoolIntArray( 0, 24, 0, 2, 16, 0, 4, 24, 0, 6, 9, 131074, 9, 24, 0, 12, 16, 0, 14, 24, 0, 15, 24, 0, 17, 16, 0, 65536, 24, 0, 65538, 16, 0, 65540, 24, 0, 65542, 9, 131074, 65545, 24, 0, 65548, 16, 0, 65550, 24, 0, 65551, 24, 0, 65553, 16, 0, 131072, 24, 65536, 131074, 16, 0, 131076, 24, 0, 131078, 9, 131074, 131081, 24, 131072, 131084, 16, 0, 131086, 24, 0, 131087, 24, 65536, 131089, 16, 0, 196610, 16, 0, 196612, 24, 0, 196614, 9, 131072, 196615, 9, 1, 196616, 9, 1, 196617, 9, 65537, 196620, 16, 0, 196622, 24, 0, 196625, 16, 65536, 262146, 16, 0, 262148, 24, 131072, 262153, 9, 262147, 262156, 16, 65536, 262158, 24, 131072, 262161, 9, 65536, 262162, 9, 1, 262163, 9, 65537, 327680, 9, 1, 327681, 9, 65537, 327682, 16, 0, 327691, 9, 196609, 327692, 9, 1, 327693, 9, 65537, 327697, 9, 0, 327699, 9, 131072, 393217, 9, 0, 393218, 16, 0, 393221, 9, 65536, 393222, 9, 1, 393223, 9, 1, 393224, 9, 196610, 393229, 9, 131072, 393230, 9, 1, 393231, 9, 1, 393232, 9, 1, 393233, 9, 131073, 458753, 9, 0, 458754, 16, 65536, 458757, 9, 196611, 458758, 9, 1, 458759, 9, 65537, 458761, 9, 65538, 524289, 9, 131072, 524290, 9, 1, 524291, 9, 65537, 524293, 9, 0, 524295, 9, 131074, 524297, 9, 131072, 524298, 9, 1, 524299, 9, 65537, 589827, 9, 131072, 589828, 9, 1, 589829, 9, 131073, 589831, 9, 131074, 589835, 9, 0, 655370, 9, 65536, 655371, 9, 131073, 720905, 16, 131072 )
+
+[node name="Foreground" parent="." instance=ExtResource( 5 )]
+show_collision = false
+tile_data = PoolIntArray( -1, 1, 65537, -65536, 1, 65537, -65535, 1, 65537, -65534, 1, 65537, -65533, 1, 65537, -65532, 1, 65537, -65531, 1, 65537, -65530, 1, 65537, -65529, 1, 65537, -65528, 1, 65537, -65527, 1, 65537, -65526, 1, 65537, -65525, 1, 65537, -65524, 1, 65537, -65523, 1, 65537, -65522, 1, 65537, -65521, 1, 65537, -65520, 1, 65537, -65519, 1, 65537, -65518, 1, 65537, -65517, 1, 65537, -65516, 1, 65537, 65535, 1, 65537, 20, 1, 65537, 131071, 1, 65537, 65556, 1, 65537, 196607, 1, 65537, 131084, 2, 458752, 131092, 1, 65537, 262143, 1, 65537, 196610, 2, 458752, 196615, 2, 327681, 196628, 1, 65537, 327679, 1, 65537, 262153, 2, 327681, 262164, 1, 65537, 393215, 1, 65537, 327691, 2, 327681, 327698, 1, 0, 327700, 1, 65537, 458751, 1, 65537, 393218, 2, 458752, 393222, 2, 327680, 393223, 2, 327682, 393230, 2, 327680, 393233, 1, 0, 393234, 1, 65536, 393235, 1, 65536, 393236, 1, 65537, 524287, 1, 65537, 458761, 2, 393216, 458769, 1, 65536, 458770, 1, 65536, 458771, 1, 65536, 458772, 1, 65537, 589823, 1, 65537, 524290, 2, 327681, 524293, 2, 327681, 524305, 1, 65536, 524306, 1, 65536, 524307, 1, 65536, 524308, 1, 65537, 655359, 1, 65537, 589835, 2, 327681, 589841, 1, 65536, 589842, 1, 65536, 589843, 1, 65536, 589844, 1, 65537, 720895, 1, 65537, 655367, 2, 393216, 655368, 15, 0, 655369, 15, 1, 655370, 15, 1, 655371, 15, 1, 655372, 15, 3, 655377, 1, 65536, 655378, 1, 65536, 655379, 1, 65536, 655380, 1, 65537, 786431, 1, 65537, 720896, 1, 1, 720897, 1, 1, 720898, 1, 1, 720899, 1, 1, 720900, 1, 1, 720901, 1, 1, 720902, 1, 1, 720903, 1, 1, 720904, 1, 1, 720905, 1, 1, 720906, 1, 1, 720907, 1, 1, 720908, 1, 1, 720909, 1, 1, 720910, 1, 1, 720911, 1, 1, 720912, 1, 1, 720913, 1, 1, 720914, 1, 65536, 720915, 1, 1, 720916, 1, 1 )
+
+[node name="The Core" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160, 96 )
+rotation = 4.84785e-05
+nodePaths = [ NodePath("../Nodes/EnergyNode_1"), NodePath("../Nodes/EnergyNode_2"), NodePath("../Nodes/EnergyNode_3"), NodePath("../Nodes/EnergyNode_4") ]
+
+[node name="Nodes" type="Node2D" parent="."]
+
+[node name="EnergyNode_1" parent="Nodes" instance=ExtResource( 3 )]
+position = Vector2( 8, 88 )
+rotation = 1.5708
+
+[node name="EnergyNode_2" parent="Nodes" instance=ExtResource( 3 )]
+position = Vector2( 312, 87.7633 )
+rotation = 4.71239
+
+[node name="EnergyNode_3" parent="Nodes" instance=ExtResource( 3 )]
+position = Vector2( 168, 168 )
+
+[node name="EnergyNode_4" parent="Nodes" instance=ExtResource( 3 )]
+position = Vector2( 104, 8 )
+rotation = 3.14159
+
+[node name="Energy Balls" type="Node2D" parent="."]
+
+[node name="Energy Ball" parent="Energy Balls" instance=ExtResource( 7 )]
+position = Vector2( 152, 56 )
+
+[node name="Energy Ball_2" parent="Energy Balls" instance=ExtResource( 7 )]
+position = Vector2( 200.059, 88 )
+
+[node name="Energy Ball_3" parent="Energy Balls" instance=ExtResource( 7 )]
+position = Vector2( 136, 140 )
+
+[node name="Energy Ball_4" parent="Energy Balls" instance=ExtResource( 7 )]
+position = Vector2( 120, 87.7041 )
+
+[node name="Mirrors" type="Node2D" parent="."]
+
+[node name="Mirror Block" parent="Mirrors" instance=ExtResource( 4 )]
+position = Vector2( 24, 140 )
+currentRotation = 2
+
+[node name="Mirror Block_14" parent="Mirrors" instance=ExtResource( 4 )]
+position = Vector2( 264, 87.7633 )
+
+[node name="Mirror Block_16" parent="Mirrors" instance=ExtResource( 4 )]
+position = Vector2( 248, 24 )
+currentRotation = 3
+
+[node name="Mirror Block_15" parent="Mirrors" instance=ExtResource( 4 )]
+position = Vector2( 312, 24 )
+
+[node name="Mirror Block_4" parent="Mirrors" instance=ExtResource( 4 )]
+position = Vector2( 248, 140 )
+currentRotation = 3
+
+[node name="Mirror Block_13" parent="Mirrors" instance=ExtResource( 4 )]
+position = Vector2( 24, 88 )
+currentRotation = 1
+
+[node name="Mirror Block_9" parent="Mirrors" instance=ExtResource( 4 )]
+position = Vector2( 264, 168 )
+currentRotation = 1
+
+[node name="Mirror Block_6" parent="Mirrors" instance=ExtResource( 4 )]
+position = Vector2( 72, 56 )
+currentRotation = 1
+
+[node name="Mirror Block_7" parent="Mirrors" instance=ExtResource( 4 )]
+position = Vector2( 72, 140 )
+
+[node name="Mirror Block_8" parent="Mirrors" instance=ExtResource( 4 )]
+position = Vector2( 104, 24 )
+currentRotation = 2
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 8, 164 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 160, 96 )
+current = true
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+anims/end = SubResource( 1 )
+
+[connection signal="filled" from="The Core" to="Camera2D" method="_on_The_Core_filled"]

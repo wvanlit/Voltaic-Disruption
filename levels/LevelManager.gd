@@ -8,7 +8,7 @@ var currentLevelIndex = 0
 
 onready var globalEnv = $"/root/GlobalWorldEnvironment"
 
-var in_game_menu_scene = preload("res://ui/screens/In-Game Menu.tscn")
+var in_game_menu_scene = load("res://ui/screens/In-Game Menu.tscn")
 var in_game_menu_instance = null
 
 
@@ -45,11 +45,13 @@ func reset_level():
 
 func show_in_game_menu():
 	globalEnv.set_mode(globalEnv.EnvMode.MENU)
+	get_tree().paused = true
 	in_game_menu_instance = in_game_menu_scene.instance()
 	get_tree().get_root().add_child(in_game_menu_instance)
 
 
 func hide_in_game_menu():
 	globalEnv.set_mode(globalEnv.EnvMode.GAME)
+	get_tree().paused = false
 	in_game_menu_instance.queue_free()
 	in_game_menu_instance = null
